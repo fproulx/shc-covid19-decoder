@@ -5,4 +5,5 @@ I wish this would take the PDF directly, but I did not want to dependon Graphics
 
 Hackish steps:
 - Take a screenshot of the PDF, save as PNG, place in Downloads folder `~/Downloads/vaccination_proof.png` (or modify path in `dump_shc.js`)
+- `npm install` dependencies
 - Run `node dump_shc.js`
