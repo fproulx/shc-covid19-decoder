@@ -8,6 +8,12 @@ var pdf2img = require("pdf2img");
 var base64url = require("base64url");
 
 const input = process.argv[2];
+if (input === undefined) {
+  console.log(
+    "Provide path to PNG screenshot of the PDF (yeah I know, it's hackish for now)"
+  );
+  process.exit(-1);
+}
 
 imageData = PNG.sync.read(fs.readFileSync(input));
 
