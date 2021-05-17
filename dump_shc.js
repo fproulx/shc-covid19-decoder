@@ -7,7 +7,7 @@ var zlib = require("zlib");
 var pdf2img = require("pdf2img");
 var base64url = require("base64url");
 
-const input = path.join(process.env.HOME, "/Downloads/vaccination_proof.png");
+const input = process.argv[2];
 
 imageData = PNG.sync.read(fs.readFileSync(input));
 
