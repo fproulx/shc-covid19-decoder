@@ -15,19 +15,15 @@ if (input === undefined) {
   process.exit(-1);
 }
 
-jose.JWK.asKeyStore({
-  keys: [
-    {
-      kid: "o-kjQwit6lT5I1aSzWd26SdN3FANWtwUyxKuiyEXP68",
-      alg: "ES256",
-      kty: "EC",
-      crv: "P-256",
-      use: "sig",
-      x: "XSxuwW_VI_s6lAw6LAlL8N7REGzQd_zXeIVDHP_j_Do",
-      y: "88-aI4WAEl4YmUpew40a9vq_w5OcFvsuaKMxJRLRLL0",
-    },
-  ],
-}).then(function (keystore) {
+jose.JWK.asKey({
+  kid: "some-kid",
+  alg: "ES256",
+  kty: "EC",
+  crv: "P-256",
+  use: "sig",
+  x: "XSxuwW_VI_s6lAw6LAlL8N7REGzQd_zXeIVDHP_j_Do",
+  y: "88-aI4WAEl4YmUpew40a9vq_w5OcFvsuaKMxJRLRLL0",
+}).then(function (key) {
   imageData = PNG.sync.read(fs.readFileSync(input));
 
   const scannedQR = jsQR(
@@ -51,7 +47,7 @@ jose.JWK.asKeyStore({
   console.log(base64url.decode(scannedJWS.split(".")[0]));
   console.log("-----");
 
-  jose.JWS.createVerify(keystore)
+  jose.JWS.createVerify(key)
     .verify(scannedJWS)
     .then(function (result) {
       const verifiedPayload = scannedJWS.split(".")[1];
