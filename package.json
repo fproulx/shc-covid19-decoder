@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "webpack ./src/index.js -o ./public/ --mode development --watch",
-    "build": "webpack ./src/index.js -o ./public/ --mode production"
+    "dev": "webpack ./src/index.js -o ./docs/ --mode development --watch",
+    "build": "webpack ./src/index.js -o ./docs/ --mode production"
   },
   "dependencies": {
     "@zxing/library": "^0.18.5",
