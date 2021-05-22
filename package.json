@@ -1,10 +1,23 @@
 {
+  "scripts": {
+    "dev": "webpack ./src/index.js -o ./public/ --mode development --watch",
+    "build": "webpack ./src/index.js -o ./public/ --mode production"
+  },
   "dependencies": {
+    "@zxing/library": "^0.18.5",
+    "assert": "^2.0.0",
+    "atob": "^2.1.2",
     "base64url": "^3.0.1",
+    "browserify-zlib": "^0.2.0",
     "jsqr": "^1.4.0",
     "node-jose": "^2.0.0",
     "pdf2img": "^0.5.0",
     "pngjs": "^6.0.0",
-    "zlib": "^1.0.5"
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.3",
+    "webpack": "^5.37.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.7.0"
   }
 }

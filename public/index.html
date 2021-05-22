@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>shc-covid19-decoder</title>
+    <script async type="text/javascript" src="./main.js"></script>
+  </head>
+  <body class="antialiased">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+
+    <div>
+      <button id="startButton">Start</button>
+      <button id="resetButton">Reset</button>
+    </div>
+
+    <div>
+      <video
+        id="video"
+        width="300"
+        height="200"
+        style="border: 1px solid gray; transform: scaleX(-1)"
+      ></video>
+    </div>
+
+    <div id="sourceSelectPanel" style="display: none">
+      <label for="sourceSelect">Change video source:</label>
+      <select id="sourceSelect" style="max-width: 400px"></select>
+    </div>
+
+    <label>Result:</label>
+    <pre><code id="result"></code></pre>
+  </body>
+</html>
