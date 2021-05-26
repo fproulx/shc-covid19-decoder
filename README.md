@@ -1,5 +1,8 @@
 # shc-covid19-decoder
 
+Visit simple hosted version on your phone (does NOT transmit any data, all remains in your browser)
+https://fproulx.github.io/shc-covid19-decoder/
+
 Trash POC to cryprographically verify the signature of COVID-19 vacinnation proof and decode the payload.
 
 Hackish steps:
