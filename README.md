@@ -3,12 +3,8 @@
 Visit simple hosted version on your phone (does NOT transmit any data, all remains in your browser)
 https://fproulx.github.io/shc-covid19-decoder/
 
-Trash POC to cryprographically verify the signature of COVID-19 vacinnation proof and decode the payload.
-
-Hackish steps:
-
-- Take a screenshot of the PDF, save as PNG (I wish this would take the PDF directly, but I did not want to depend on GraphicsMagick to do `pdf2img` ...)
-- Run `node dump_shc.js PATH_TO_FILE.png`
+About
+Very simple app to decode your Vaccination Proof QR Code (such as the one provided by government of Quebec) - Compatible with SHC (Smart Health Card standard).
 
 ![demo](demo.png)
 
