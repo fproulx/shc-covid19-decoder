@@ -15,7 +15,7 @@
     "pngjs": "^6.0.0",
     "stream-browserify": "^3.0.0",
     "util": "^0.12.3",
-    "webpack": "^5.37.1"
+    "webpack": "^5.38.1"
   },
   "devDependencies": {
     "webpack-cli": "^4.7.0"
