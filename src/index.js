@@ -23,7 +23,7 @@ function decodeOnce(codeReader, selectedDeviceId, verifySig) {
       console.log("scannedJWS", scannedJWS);
       decodeJWS(scannedJWS).then(
         function (decoded) {
-          console.log("scannedJWS", scannedJWS);
+          console.log("decodedJWS", decoded);
           if (!verifySig) {
             setPayload(decoded, false);
             return;
