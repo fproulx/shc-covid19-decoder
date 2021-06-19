@@ -19,9 +19,15 @@ function getScannedJWS(shcString) {
     .join("");
 }
 
-function verifyJWS(jws) {
-  return jose.JWK.asKey(issuers[0].keys[0]).then(function(key) {
-    const { verify } = jose.JWS.createVerify(key);
+function verifyJWS(jws, iss) {
+  const issuer = issuers.find(el => el.iss === iss);
+  if (!issuer) {
+    error = new Error("Unknown issuer " + iss);
+    error.customMessage = true;
+    return Promise.reject(error);
+  }
+  return jose.JWK.asKeyStore({ keys: issuer.keys }).then(function (keyStore) {
+    const { verify } = jose.JWS.createVerify(keyStore);
     console.log("jws", jws);
     return verify(jws);
   });

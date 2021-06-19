@@ -31,11 +31,12 @@ console.log("JWS Header");
 console.log(base64url.decode(scannedJWS.split(".")[0]));
 console.log("-----");
 
-verifyJWS(scannedJWS).then(
-  function (result) {
-    return decodeJWS(scannedJWS).then((decoded) => {
-      console.log(decoded.vc.credentialSubject.fhirBundle.entry);
-    });
+decodeJWS(scannedJWS).then(
+  function (decoded) {
+    return verifyJWS(scannedJWS, decoded.iss).then(
+      (result) => console.log(decoded.vc.credentialSubject.fhirBundle.entry),
+      (e) => console.log("Signature verification failed: " + e.message)
+    );
   },
   function (e) {
     console.log("Ooooh crap - this looks like a fake vacinnation proof");

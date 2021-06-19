@@ -7,6 +7,7 @@ function setResult(result) {
 
 function setPayload(payload) {
   setResult(
+    "issuer: " + payload.iss + "\n" +
     JSON.stringify(payload.vc.credentialSubject.fhirBundle.entry, null, 2)
   );
 }
@@ -22,14 +23,25 @@ function decodeOnce(codeReader, selectedDeviceId, verifySig) {
       } else {
         verify = (jws) => Promise.resolve();
       }
-      verify(scannedJWS).then(
-        function () {
+      decodeJWS(scannedJWS).then(
+        function (decoded) {
           console.log("scannedJWS", scannedJWS);
-          return decodeJWS(scannedJWS).then((decoded) => setPayload(decoded));
+          return verify(scannedJWS, decoded.iss).then(
+            (result) => setPayload(decoded),
+            (error) => {
+              if (error.customMessage) {
+                setResult(error.message);
+              } else {
+                console.error(error);
+                setResult("Fake vaccine record?\n" +
+                  "Signature verification failed for issuer " + decoded.iss);
+              }
+            }
+          );
         },
         function (e) {
           console.error(e);
-          setResult("This looks like a fake vaccination proof");
+          setResult("This doesn't look like a SMART health card");
         }
       );
     },
