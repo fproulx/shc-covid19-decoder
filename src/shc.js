@@ -12,11 +12,17 @@ function getQRFromImage(imageData) {
 }
 
 function getScannedJWS(shcString) {
-  return shcString
-    .match(/^shc:\/(.+)$/)[1]
-    .match(/(..?)/g)
-    .map((num) => String.fromCharCode(parseInt(num, 10) + 45))
-    .join("");
+  try {
+    return shcString
+      .match(/^shc:\/(.+)$/)[1]
+      .match(/(..?)/g)
+      .map((num) => String.fromCharCode(parseInt(num, 10) + 45))
+      .join("");
+  } catch (e) {
+    error = new Error("parsing shc string failed");
+    error.cause = e;
+    throw error;
+  }
 }
 
 function verifyJWS(jws, iss) {
@@ -34,8 +40,14 @@ function verifyJWS(jws, iss) {
 }
 
 function decodeJWS(jws) {
-  const payload = jws.split(".")[1];
-  return decodeJWSPayload(Buffer.from(payload, "base64"));
+  try {
+    const payload = jws.split(".")[1];
+    return decodeJWSPayload(Buffer.from(payload, "base64"));
+  } catch (e) {
+    error = new Error("decoding payload failed");
+    error.cause = e;
+    throw error;
+  }
 }
 
 function decodeJWSPayload(decodedPayload) {
@@ -43,11 +55,15 @@ function decodeJWSPayload(decodedPayload) {
     zlib.inflateRaw(decodedPayload, function (err, decompressedResult) {
       if (typeof err === "object" && err) {
         console.log("Unable to decompress");
-        reject();
+        reject(err);
       } else {
-        console.log(decompressedResult);
-        scannedResult = decompressedResult.toString("utf8");
-        resolve(JSON.parse(scannedResult));
+        try {
+          console.log(decompressedResult);
+          scannedResult = decompressedResult.toString("utf8");
+          resolve(JSON.parse(scannedResult));
+        } catch (e) {
+          reject(e);
+        }
       }
     });
   });
