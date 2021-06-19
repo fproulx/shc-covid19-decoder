@@ -5,13 +5,18 @@ function setResult(result) {
   document.getElementById("result").textContent = result;
 }
 
-function decodeOnce(codeReader, selectedDeviceId) {
+function decodeOnce(codeReader, selectedDeviceId, verifySig) {
   codeReader.decodeFromInputVideoDevice(selectedDeviceId, "video").then(
     (result) => {
       console.log("SHC string", result.text);
       const scannedJWS = getScannedJWS(result.text);
       console.log("scannedJWS", scannedJWS);
-      verifyJWS(scannedJWS).then(
+      if (verifySig) {
+        verify = verifyJWS;
+      } else {
+        verify = (jws) => Promise.resolve();
+      }
+      verify(scannedJWS).then(
         function () {
           console.log("scannedJWS", scannedJWS);
           return decodeJWS(scannedJWS).then((decoded) =>
@@ -39,6 +44,7 @@ codeReader
   .then((videoInputDevices) => {
     const sourceSelect = document.getElementById("sourceSelect");
     selectedDeviceId = videoInputDevices[0].deviceId;
+    verifySig = true;
     if (videoInputDevices.length >= 1) {
       videoInputDevices.forEach((element) => {
         const sourceOption = document.createElement("option");
@@ -56,7 +62,7 @@ codeReader
     }
 
     document.getElementById("startButton").addEventListener("click", () => {
-      decodeOnce(codeReader, selectedDeviceId);
+      decodeOnce(codeReader, selectedDeviceId, verifySig);
       console.log(`Started decode from camera with id ${selectedDeviceId}`);
     });
 
@@ -65,6 +71,11 @@ codeReader
       setResult("");
       console.log("Reset.");
     });
+
+    const verifyCheckbox = document.getElementById("verifyCheckbox");
+    verifyCheckbox.onchange = () => {
+      verifySig = verifyCheckbox.checked;
+    };
   })
   .catch((err) => {
     console.error(err);
