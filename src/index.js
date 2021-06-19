@@ -5,6 +5,12 @@ function setResult(result) {
   document.getElementById("result").textContent = result;
 }
 
+function setPayload(payload) {
+  setResult(
+    JSON.stringify(payload.vc.credentialSubject.fhirBundle.entry, null, 2)
+  );
+}
+
 function decodeOnce(codeReader, selectedDeviceId, verifySig) {
   codeReader.decodeFromInputVideoDevice(selectedDeviceId, "video").then(
     (result) => {
@@ -19,9 +25,7 @@ function decodeOnce(codeReader, selectedDeviceId, verifySig) {
       verify(scannedJWS).then(
         function () {
           console.log("scannedJWS", scannedJWS);
-          return decodeJWS(scannedJWS).then((decoded) =>
-            setResult(JSON.stringify(decoded, null, 2))
-          );
+          return decodeJWS(scannedJWS).then((decoded) => setPayload(decoded));
         },
         function (e) {
           console.error(e);

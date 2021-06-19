@@ -39,10 +39,7 @@ function decodeJWS(jws) {
       } else {
         console.log(decompressedResult);
         scannedResult = decompressedResult.toString("utf8");
-        const entries =
-          JSON.parse(scannedResult).vc.credentialSubject.fhirBundle.entry;
-
-        resolve(entries);
+        resolve(JSON.parse(scannedResult));
       }
     });
   });
