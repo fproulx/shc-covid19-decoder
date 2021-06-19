@@ -34,9 +34,11 @@ function verifyJWS(jws, iss) {
 }
 
 function decodeJWS(jws) {
-  const verifiedPayload = jws.split(".")[1];
-  const decodedPayload = Buffer.from(verifiedPayload, "base64");
+  const payload = jws.split(".")[1];
+  return decodeJWSPayload(Buffer.from(payload, "base64"));
+}
 
+function decodeJWSPayload(decodedPayload) {
   return new Promise((resolve, reject) => {
     zlib.inflateRaw(decodedPayload, function (err, decompressedResult) {
       if (typeof err === "object" && err) {
@@ -56,4 +58,5 @@ module.exports = {
   getScannedJWS,
   verifyJWS,
   decodeJWS,
+  decodeJWSPayload,
 };

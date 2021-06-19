@@ -7,6 +7,7 @@ const {
   getScannedJWS,
   verifyJWS,
   decodeJWS,
+  decodeJWSPayload,
 } = require("./src/shc");
 
 const input = process.argv[2];
@@ -34,7 +35,11 @@ console.log("-----");
 decodeJWS(scannedJWS).then(
   function (decoded) {
     return verifyJWS(scannedJWS, decoded.iss).then(
-      (result) => console.log(decoded.vc.credentialSubject.fhirBundle.entry),
+      (result) => {
+        decodeJWSPayload(result.payload).then(
+          (result) => console.log(result.vc.credentialSubject.fhirBundle.entry)
+        );
+      },
       (e) => console.log("Signature verification failed: " + e.message)
     );
   },
