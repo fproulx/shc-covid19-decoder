@@ -6,28 +6,27 @@ function setResult(result) {
 }
 
 function decodeOnce(codeReader, selectedDeviceId) {
-  codeReader.decodeFromInputVideoDevice(selectedDeviceId, "video").then(
-    (result) => {
-      console.log("SHC string", result.text);
-      const scannedJWS = getScannedJWS(result.text);
-      console.log("scannedJWS", scannedJWS);
-      verifyJWS(scannedJWS).then(
-        function () {
-          console.log("scannedJWS", scannedJWS);
-          return decodeJWS(scannedJWS).then((decoded) =>
-            setResult(JSON.stringify(decoded, null, 2))
-          );
+    codeReader.decodeFromInputVideoDevice(selectedDeviceId, "video").then(
+        (result) => {
+            console.log("SHC string", result.text);
+            const scannedJWS = getScannedJWS(result.text);
+            console.log("scannedJWS", scannedJWS);
+            setResult("Checking...");
+            result = decodeJWS(scannedJWS);
+            result.then((decoded) =>
+                {
+                    console.log("scannedJWS", decoded);
+                    setResult(JSON.stringify(decoded, null, 2));
+                }, e => {
+                    console.error(e);
+                    setResult("This looks like a fake vaccination proof");
+                }
+            );
         },
-        function (e) {
-          console.error(e);
-          setResult("This looks like a fake vaccination proof");
+        (err) => {
+            setResult(err);
         }
-      );
-    },
-    (err) => {
-      setResult(err);
-    }
-  );
+    );
 }
 
 let selectedDeviceId;
