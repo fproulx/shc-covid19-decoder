@@ -37,7 +37,7 @@ decodeJWS(scannedJWS).then(
     return verifyJWS(scannedJWS, decoded.iss).then(
       (result) => {
         decodeJWSPayload(result.payload).then(
-          (result) => console.log(result.vc.credentialSubject.fhirBundle.entry)
+          (result) => console.dir(result.vc.credentialSubject.fhirBundle.entry, {depth: null, compact: false})
         );
       },
       (e) => console.log("Signature verification failed: " + e.message)
