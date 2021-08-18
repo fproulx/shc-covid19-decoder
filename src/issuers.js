@@ -29,6 +29,16 @@ const issuers = [
         y: "rSf2dKerJFW3-oUNcvyrI2x39hV2EbazORZvh44ukjg" },
     ]
   },
+  {
+    id: "us.la",
+    iss: "https://healthcardcert.lawallet.com",
+    keys: [
+      { kid: "UOvXbgzZj4zL-lt1uJVS_98NHQrQz48FTdqQyNEdaNE",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "n1PxhSk7DQj8ZBK3VIfwhlcN__QG357gbiTfZYt1gn8",
+        y: "ZDGv5JYe4mCm75HCsHG8UkIyffr1wcZMwJjH8v5cGCc" },
+    ]
+  },
 ];
 
 module.exports = {
