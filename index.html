@@ -9,11 +9,26 @@
     />
     <title>shc-covid19-decoder</title>
     <script async type="text/javascript" src="./build/main.js"></script>
+
+    <style>
+      .codebox {
+        min-width: 640px;
+        min-height: 320px;
+        border:1px solid black;
+        background-color:#eee;
+        padding:10px;
+        font-size:0.9em;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body class="antialiased">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
+    <h1>shc-covid19-decoder</h1>
+
+    <h2>Scan QR code</h2>
     <div>
       <button id="startButton">Start</button>
       <button id="resetButton">Reset</button>
@@ -33,7 +48,15 @@
       <select id="sourceSelect" style="max-width: 400px"></select>
     </div>
 
-    <label>Result:</label>
-    <pre><code id="result"></code></pre>
+    <h2>Manual entry</h2>
+
+    <form name="manual-entry">
+      <input type="text" name="shcString" placeholder="shc:/••••••••••••••••••••••••••••••••••••••"/>
+      <button type="submit">Decode</button>
+    </form>
+
+    <h2>Result</h2>
+    <pre><textarea id="result" class="codebox" readonly>Result will appear here</textarea></pre>
+    <button id="copy">Copy content to clipboard</button>
   </body>
 </html>
