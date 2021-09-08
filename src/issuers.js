@@ -39,6 +39,16 @@ const issuers = [
         y: "ZDGv5JYe4mCm75HCsHG8UkIyffr1wcZMwJjH8v5cGCc" },
     ]
   },
+  {
+    id: "ca.yt",
+    iss: "https://pvc.service.yukon.ca/issuer",
+    keys: [
+      { kid: "UnHGY-iyCIr__dzyqcxUiApMwU9lfeXnzT2i5Eo7TvE",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "wCeT9rdLYTpOK52OK0-oRbwDxbljJdNiDuxPsPt_1go",
+        y: "IgFPi1OrHtJWJGwPMvlueeHmULUKEpScgpQtoHNjX-Q" },
+    ]
+  },
 ];
 
 module.exports = {
