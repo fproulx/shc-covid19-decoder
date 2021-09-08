@@ -33,7 +33,7 @@ console.log("-----");
 
 verifyJWS(scannedJWS).then(
   function (result) {
-    return decodeJWS(scannedJWS).then((decoded) => console.log(decoded));
+    return decodeJWS(scannedJWS).then((decoded) => console.dir(decoded, {depth:null, compact:false}));
   },
   function (e) {
     console.log("Ooooh crap - this looks like a fake vacinnation proof");
