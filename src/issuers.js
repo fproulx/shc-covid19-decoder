@@ -79,6 +79,26 @@ const issuers = [
         y: "Ytmnz6q7qn9GhnsAB3GP3MFlnk9kTW3wKk7RAue9j8U" },
     ]
   },
+  {
+    id: "ca.sk-001",
+    iss: "https://skphr.prd.telushealthspace.com",
+    keys: [
+      { kid: "xOqUO82bEz8APn_5wohZZvSK4Ui6pqWdSAv5BEhkes0",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "Hk4ktlNfoIIo7jp5I8cefp54Ils3TsKvKXw_E9CGIPE",
+        y: "7hVieFGuHJeaNRCxVgKeVpoxDJevytgoCxqVZ6cfcdk" },
+    ]
+  },
+  {
+    id: "ca.sk-002",
+    iss: "https://commons.ehealthsask.ca",
+    keys: [
+      { kid: "RBvL32MBD4FXqXKE86HU9Nnjp0hADhqztOXb-M_mP_k",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "p9Rf7Wh1_vCMTK4i4XLQFI6_LR0ZhISQVJ2PAy2yEdA",
+        y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY" },
+    ]
+  },
 ];
 
 module.exports = {
