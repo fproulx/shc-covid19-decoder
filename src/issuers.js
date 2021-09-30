@@ -69,6 +69,16 @@ const issuers = [
         y: "xWNNHxwz0RtTgTlBom3X8xFP6U5e92KYGZIBI2SYImA" },
     ]
   },
+  {
+    id: "us.hi",
+    iss: "https://travel.hawaii.gov",
+    keys: [
+      { kid: "Qxzp3u4Z6iafzbz-6oNnzobPG8HUr0Jry38M3nuV5A8",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "sxIW-vGe4g7LXU0ZpMOiMmgMznaC_8qj6HW-2JhCTkI",
+        y: "Ytmnz6q7qn9GhnsAB3GP3MFlnk9kTW3wKk7RAue9j8U" },
+    ]
+  },
 ];
 
 module.exports = {
