@@ -59,6 +59,16 @@ const issuers = [
         y: "jA5uS5bz8R2nxf_TU-0ZmXq6CKWZhAG1Y4icAx8a9CA" },
     ]
   },
+  {
+    id: "us.va",
+    iss: "https://apps.vdh.virginia.gov/credentials",
+    keys: [
+      { kid: "sy5Q85VbiH4jNee-IpFkQvMxlVAhZ_poLMPLHiDF_8I",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "UDYtkThsYIdMuzC9AJi0CDNwwmSGt8Z75BBl9DbLXn0",
+        y: "xWNNHxwz0RtTgTlBom3X8xFP6U5e92KYGZIBI2SYImA" },
+    ]
+  },
 ];
 
 module.exports = {
