@@ -99,6 +99,16 @@ const issuers = [
         y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY" },
     ]
   },
+  {
+    id: "ca.ab",
+    iss: "https://covidrecords.alberta.ca/smarthealth/issuer",
+    keys: [
+      { kid: "JoO-sJHpheZboXdsUK4NtfulfvpiN1GlTdNnXN3XAnM",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "GsriV0gunQpl2X9KgrDZ4EDCtIdfOmdzhdlosWrMqKk",
+        y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0" },
+    ]
+  },
 ];
 
 module.exports = {
