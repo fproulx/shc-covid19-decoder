@@ -119,6 +119,16 @@ const issuers = [
         y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0" },
     ]
   },
+  {
+    id: "ca.ns",
+    iss: "https://pvc.novascotia.ca/issuer",
+    keys: [
+      { kid: "UJrT9jU8vOCUl4xsI1RZjOPP8hFUv7n9mhVtolqH9qw",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "kIaIeOhhxpiN13sDs6RKVzCpvxxObI9adKF5YEmKngM",
+        y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ" },
+    ]
+  },
 ];
 
 module.exports = {
