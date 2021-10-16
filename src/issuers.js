@@ -139,6 +139,16 @@ const issuers = [
         y: "oFofHWIlPqfqCCU9R3fJOaUoWdzVzTcSNgmtF0Qgb6w" },
     ]
   },
+  {
+    id: "us.nj",
+    iss: "https://docket.care/nj",
+    keys: [
+      { kid: "HvlLNClY2JAEhIhsZZ_CfRaxF5jdooWgaKAbLajhv2I",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "FssCyCxGTEuKiKqo-MwLDQlxz1vdKll4YFMkQaXVOkY",
+        y: "A3nNMWC8IEQsZqH8Mp83qVLTA_X9eYwzr46o4-3YyRE" },
+    ]
+  },
 ];
 
 module.exports = {
