@@ -149,6 +149,16 @@ const issuers = [
         y: "A3nNMWC8IEQsZqH8Mp83qVLTA_X9eYwzr46o4-3YyRE" },
     ]
   },
+  {
+    id: "ca.mb",
+    iss: "https://immunizationcard.manitoba.ca/api/national",
+    keys: [
+      { kid: "YnYeVk1pCtYvnmOytVTq09igCGdu_SyJM2Wn29AV7AQ",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "E2mScyP_Iwm0gn1nAYldT0MbWFUeapIsuh9ebqCJgkQ",
+        y: "AePVDo-_XxQDJ_25BW4txoLPzuu7CQ65C2oLJIN4DxI" },
+    ]
+  },
 ];
 
 module.exports = {
