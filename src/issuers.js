@@ -169,6 +169,16 @@ const issuers = [
         y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw" },
     ]
   },
+  {
+    id: "ky",
+    iss: "https://fhir-myrecord.cerner.com/r4/QGFlV8qKdgYu-vPpMAoQW5U4Jb7riiI2",
+    keys: [
+      { kid: "N2maG8qOhITe_zyPqcrCa6LT_mW18ZtFPy09cGAB24w",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "DNo1BEwoRPNRDYsulhhxu9jOxkvCuEVU4IaCs3H6PJ0",
+        y: "zB_HLKrE_n5Xi9I7yMIION-IQpzH5MEZoP2GvRftSsI" },
+    ]
+  },
 ];
 
 module.exports = {
