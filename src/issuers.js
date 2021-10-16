@@ -129,6 +129,16 @@ const issuers = [
         y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ" },
     ]
   },
+  {
+    id: "us.ut",
+    iss: "https://docket.care/ut",
+    keys: [
+      { kid: "sBHR4URZTz8cq2kIV_JhTXwicbqp1tHtodItRSx0O0Q",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "uyzHUWf8EVXtlFW9nssxa1Z002rpc-GUw-YrZOZtmqo",
+        y: "oFofHWIlPqfqCCU9R3fJOaUoWdzVzTcSNgmtF0Qgb6w" },
+    ]
+  },
 ];
 
 module.exports = {
