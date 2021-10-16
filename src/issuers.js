@@ -99,6 +99,16 @@ const issuers = [
         y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY" },
     ]
   },
+  {
+    id: "ca.nt",
+    iss: "https://www.hss.gov.nt.ca/covax",
+    keys: [
+      { kid: "8C-9TNgyGuOqc-3FXyNRq6m5U9S1wyhCS1TvpgjzkoU",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "C-9Lltax_iU6iYdK8DdCZzv4cQN6SFVUG7ACaCT_MKM",
+        y: "_qaENBMJz6iLf1qyYMx2_D6fXxbbNoHbLcfdPF9rUI0", }, 
+    ]
+  },          
 ];
 
 module.exports = {
