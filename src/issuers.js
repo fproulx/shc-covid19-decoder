@@ -159,6 +159,16 @@ const issuers = [
         y: "AePVDo-_XxQDJ_25BW4txoLPzuu7CQ65C2oLJIN4DxI" },
     ]
   },
+  {
+    id: "ca.on",
+    iss: "https://prd.pkey.dhdp.ontariohealth.ca",
+    keys: [
+      { kid: "Nlgwb6GUrU_f0agdYKc77sXM9U8en1gBu94plufPUj8",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "ibapbMkHMlkR3D-AU0VTFDsiidQ49oD9Ha7VY8Gao3s",
+        y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw" },
+    ]
+  },
 ];
 
 module.exports = {
