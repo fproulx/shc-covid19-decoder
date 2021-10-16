@@ -179,6 +179,16 @@ const issuers = [
         y: "zB_HLKrE_n5Xi9I7yMIION-IQpzH5MEZoP2GvRftSsI" },
     ]
   },
+  {
+    id: "us.mn",
+    iss: "https://docket.care/mn",
+    keys: [
+      { kid: "j9NGIGK-wkXxnn6IyFHXFAYUmK9H7s74fT2gq66n5aY",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "OcuWX7IOlslRFWdaCFQeT5vlZqaoAJmbupPkqpmUGXE",
+        y: "n8PosQKB9sTm6Rwy_FmDND2tHZ3AstzaWk7TAW9HnVU" },
+    ]
+  },
 ];
 
 module.exports = {
