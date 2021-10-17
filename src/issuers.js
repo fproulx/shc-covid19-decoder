@@ -189,6 +189,16 @@ const issuers = [
         y: "n8PosQKB9sTm6Rwy_FmDND2tHZ3AstzaWk7TAW9HnVU" },
     ]
   },
+  {
+    id: "ca.nl",
+    iss: "https://www.gov.nl.ca/covid-19/life-during-covid-19/vaccination-record/prod",
+    keys: [
+      { kid: "UboztS3pE1mr0dnG7Rv24kRNqlYbHrbxd-qBFerpZvI",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "mB0PKTVRnr3JCtyucEjCHXkXW3COg5KP0y4gKCNJxWc",
+        y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs" },
+    ]
+  },
 ];
 
 module.exports = {
