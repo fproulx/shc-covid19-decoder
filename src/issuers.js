@@ -259,6 +259,16 @@ const issuers = [
         y: "PDPZMLAN9DT0DFRTEQKAQJEylLIGXTcfCfX0yaiRrnE" },
     ]
   },
+  {
+    id: "us.gu",
+    iss: "https://smarthealthcard.iisregistry.net/guam/issuer",
+    keys: [
+      { kid: "CVfQFkOuS08fAs1UKNr6PhqrWbp1rEuBu_M3pzfHjGA",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "eJlW95Wh-w_dET_R_if7ZRyhT0T6C3KpkG8leb-qxPs",
+        y: "ETtQqhA7VH2ubizhLvqzmXTeO6pOMD9539upKDNoL0I" },
+    ]
+  },
 ];
 
 module.exports = {
