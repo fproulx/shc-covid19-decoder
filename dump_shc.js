@@ -7,6 +7,7 @@ const {
   getScannedJWS,
   verifyJWS,
   decodeJWS,
+  decodeJWSPayload,
 } = require("./src/shc");
 
 const input = process.argv[2];
@@ -31,11 +32,18 @@ console.log("JWS Header");
 console.log(base64url.decode(scannedJWS.split(".")[0]));
 console.log("-----");
 
-verifyJWS(scannedJWS).then(
-  function (result) {
-    return decodeJWS(scannedJWS).then((decoded) => console.log(decoded));
+decodeJWS(scannedJWS).then(
+  function (decoded) {
+    return verifyJWS(scannedJWS, decoded.iss).then(
+      (result) => {
+        decodeJWSPayload(result.payload).then(
+          (result) => console.dir(result.vc.credentialSubject.fhirBundle.entry, {depth: null, compact: false})
+        );
+      },
+      (e) => console.log("Signature verification failed: " + e.message)
+    );
   },
   function (e) {
-    console.log("Ooooh crap - this looks like a fake vacinnation proof");
+    console.log("Ooooh crap - this looks like a fake vaccination proof");
   }
 );
