@@ -209,6 +209,16 @@ const issuers = [
         y: "N1eSU9XhVdtb7l3rYj6_mXxHDVHj5ZDN_oB-sq6vVH8" },
     ]
   },
+  {
+    id: "us.ct",
+    iss: "https://smarthealthcard.iisregistry.net/connecticut/issuer",
+    keys: [
+      { kid: "SzxkIArQIMhaFvD7yASR75tYfcIvc3SxbcY82WqpJYc",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "WOfXcDqfbL5pHYJ7TZ1G5nUs5RlpFEULjKK58-GIZHU",
+        y: "cfP-u94WNE_gBD3dvp2XqKHF7k4JWC-JJsOhf8bxk4M" },
+    ]
+  },
 ];
 
 module.exports = {
