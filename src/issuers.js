@@ -239,6 +239,16 @@ const issuers = [
         y: "lwnDiJgFRShPY0PMmfGdGWF84XlpJxIFU1C4cYnQhGM" },
     ]
   },
+  {
+    id: "us.ok",
+    iss: "https://smarthealthcard.iisregistry.net/oklahoma/issuer",
+    keys: [
+      { kid: "mdc6xSqYJBj5wAfdO75tFY96MP1sRwv8o1vRKcJvWe4",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "_0Ykdew25aOEAoEqgiKOwsuQHaSBo8m4cxp7JrpnFoE",
+        y: "SWDMBC-y-YMiso_hSQB6bl3MvYOii-rpYtgQJISt84Y" },
+    ]
+  },
 ];
 
 module.exports = {
