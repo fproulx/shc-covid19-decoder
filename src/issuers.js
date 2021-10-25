@@ -199,6 +199,16 @@ const issuers = [
         y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs" },
     ]
   },
+  {
+    id: "us.de",
+    iss: "https://smarthealthcard.iisregistry.net/delaware/issuer",
+    keys: [
+      { kid: "vYkxPjrksrvOfK8S02wkQ6LYcY5JLuDpnyERBklL-V8",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "alTrUEv7wMrOf9Sge9GeSAwz8cGz56JsJaZKzOlRQG4",
+        y: "N1eSU9XhVdtb7l3rYj6_mXxHDVHj5ZDN_oB-sq6vVH8" },
+    ]
+  },
 ];
 
 module.exports = {
