@@ -249,6 +249,16 @@ const issuers = [
         y: "SWDMBC-y-YMiso_hSQB6bl3MvYOii-rpYtgQJISt84Y" },
     ]
   },
+  {
+    id: "us.mp",
+    iss: "https://smarthealthcard.iisregistry.net/cnmi/issuer",
+    keys: [
+      { kid: "dYx3mLMcBeG34o7pWchb-baIIgnTQqcR53EVeYgITu4",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "JwFxV0XxGdZZAGMWYZ8zWBKzkw1UwD3CspjlhmzKchE",
+        y: "PDPZMLAN9DT0DFRTEQKAQJEylLIGXTcfCfX0yaiRrnE" },
+    ]
+  },
 ];
 
 module.exports = {
