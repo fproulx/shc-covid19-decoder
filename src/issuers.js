@@ -219,6 +219,16 @@ const issuers = [
         y: "cfP-u94WNE_gBD3dvp2XqKHF7k4JWC-JJsOhf8bxk4M" },
     ]
   },
+  {
+    id: "us.nv",
+    iss: "https://smarthealthcard.iisregistry.net/nevada/issuer",
+    keys: [
+      { kid: "MLHtoHWeAr5PeKA8C-S16QduFcPVHYMnuRAMLag1Fus",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "XCA3RZFKOnDep4BA8MhxrUguZZeTofsm16WuQ-a3sKU",
+        y: "9W0_JW9U7s98tOuZrkYiQyDEOoxgpMAEnIItC0_vLME" },
+    ]
+  },
 ];
 
 module.exports = {
