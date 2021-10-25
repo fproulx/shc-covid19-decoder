@@ -229,6 +229,16 @@ const issuers = [
         y: "9W0_JW9U7s98tOuZrkYiQyDEOoxgpMAEnIItC0_vLME" },
     ]
   },
+  {
+    id: "us.nm",
+    iss: "https://smarthealthcard.iisregistry.net/newmexico/issuer",
+    keys: [
+      { kid: "TyJXvion-N1hiPReLqGqP3GEHIHUKqDbpNF6_Yx2x1g",
+        alg: "ES256", kty: "EC", crv: "P-256", use: "sig",
+        x: "h6eiqSzzTu5x5lL3WcrQcN8Dw-InqaZO24ejEqtaBUo",
+        y: "lwnDiJgFRShPY0PMmfGdGWF84XlpJxIFU1C4cYnQhGM" },
+    ]
+  },
 ];
 
 module.exports = {
